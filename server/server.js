@@ -7,7 +7,7 @@ import template from './../template'
 import devBundle from './devBundle'
 
 
-const app = express()
+C
 
 devBundle.compile(app)
 
@@ -27,7 +27,7 @@ app.listen(port, function onStart(err) {
 })
 
 // Database Connection URL
-const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/mernSimpleSetup'
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/socialdb'
 // Use connect method to connect to the server
 MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true },(err, db)=>{
   console.log("Connected successfully to mongodb server")
