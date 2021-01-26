@@ -7,6 +7,7 @@ import helmet from 'helmet'
 import Template from './../template'
 import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
+import devBundle from './devBundle'
 
 const app = express()
 // configuration of app starts here
@@ -18,6 +19,8 @@ app.use(compress())
 app.use(helmet())
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors())
+
+devBundle.compile(app)
 
 //app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
