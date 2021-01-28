@@ -8,6 +8,9 @@ import Template from './../template'
 import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
 import devBundle from './devBundle'
+import path from 'path'
+const CURRENT_WORKING_DIR = process.cwd()
+
 
 const app = express()
 // configuration of app starts here
@@ -22,7 +25,7 @@ app.use(cors())
 
 devBundle.compile(app)
 
-//app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
+app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 // mount routes
 app.use('/', userRoutes)
